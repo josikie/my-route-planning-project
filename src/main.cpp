@@ -28,10 +28,18 @@ static std::optional<std::vector<std::byte>> ReadFile(const std::string &path)
 }
 
 void inputs(float start_x, float start_y, float end_x, float end_y){
-    std::cin >> start_x
+    std::cout << "Enter the start x position (0 - 100): ";
+    std::cin >> start_x;
+    std::cout << "\n";
+    std::cout << "Enter the start y position (0 - 100): ";
     std::cin >> start_y;
+    std::cout << "\n";
+    std::cout << "Enter the end x position (0 - 100): ";
     std::cin >> end_x;
+    std::cout << "\n";
+    std::cout << "Enter the end y position (0 - 100): ";
     std::cin >> end_y;
+    std::cout << "\n";
 }
 
 int main(int argc, const char **argv)
@@ -68,6 +76,7 @@ int main(int argc, const char **argv)
 
     if(((start_x < 0 && start_x > 100) && (start_y < 0 && start_y > 100)) &&
        ((end_x < 0 && end_x > 100) && (end_y < 0 && end_y > 100))){
+       std::cout << "Please enter value between 0 - 100, otherwise we can't process.";
        return;
     }
 
